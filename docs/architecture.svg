@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="900" height="700" fill="#ffffff"/>
+
+  <!-- ===================== FRONTEND ===================== -->
+  <rect x="40" y="28" width="820" height="150" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="64" y="58" font-size="15" font-weight="700" fill="#0f172a">React frontend</text>
+  <text x="187" y="58" font-size="12" fill="#64748b">Vite + TypeScript</text>
+
+  <!-- frontend boxes -->
+  <g font-size="12">
+    <rect x="70" y="76" width="240" height="80" rx="8" fill="#ffffff" stroke="#94a3b8"/>
+    <text x="190" y="102" text-anchor="middle" font-weight="600" fill="#0f172a">ContentFeed</text>
+    <text x="190" y="122" text-anchor="middle" fill="#64748b">live WebSocket feed</text>
+    <text x="190" y="139" text-anchor="middle" fill="#64748b">status filters</text>
+
+    <rect x="330" y="76" width="240" height="80" rx="8" fill="#ffffff" stroke="#94a3b8"/>
+    <text x="450" y="102" text-anchor="middle" font-weight="600" fill="#0f172a">ReviewPanel</text>
+    <text x="450" y="122" text-anchor="middle" fill="#64748b">signal breakdown · claim</text>
+    <text x="450" y="139" text-anchor="middle" fill="#64748b">appeals</text>
+
+    <rect x="590" y="76" width="240" height="80" rx="8" fill="#ffffff" stroke="#94a3b8"/>
+    <text x="710" y="102" text-anchor="middle" font-weight="600" fill="#0f172a">MetricsDashboard</text>
+    <text x="710" y="122" text-anchor="middle" fill="#64748b">automation rate · queue depth</text>
+    <text x="710" y="139" text-anchor="middle" fill="#64748b">category charts</text>
+  </g>
+
+  <!-- frontend <-> backend link -->
+  <line x1="450" y1="178" x2="450" y2="236" stroke="#64748b" stroke-width="1.5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="466" y="200" font-size="12" font-weight="600" fill="#334155">REST + WebSocket</text>
+  <text x="466" y="217" font-size="11" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">content:new · content:updated · metrics:tick</text>
+
+  <!-- ===================== BACKEND ===================== -->
+  <rect x="40" y="240" width="820" height="300" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="64" y="270" font-size="15" font-weight="700" fill="#0f172a">Express backend</text>
+  <text x="196" y="270" font-size="12" fill="#64748b">Node.js</text>
+
+  <!-- API strip -->
+  <rect x="70" y="286" width="760" height="38" rx="8" fill="#eef2ff" stroke="#c7d2fe"/>
+  <text x="450" y="310" text-anchor="middle" font-size="12" fill="#3730a3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">/content · /actions · /rules · /appeals · /metrics&#160;&#160;&#160;|&#160;&#160;&#160;rate limiting · request-id tracing</text>
+
+  <!-- pipeline -->
+  <g font-size="12">
+    <rect x="70" y="360" width="150" height="66" rx="8" fill="#ffffff" stroke="#94a3b8"/>
+    <text x="145" y="387" text-anchor="middle" font-weight="600" fill="#0f172a">Content ingestion</text>
+    <text x="145" y="406" text-anchor="middle" fill="#64748b">1.2 s interval</text>
+
+    <line x1="220" y1="393" x2="248" y2="393" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <rect x="250" y="360" width="130" height="66" rx="8" fill="#ffffff" stroke="#94a3b8"/>
+    <text x="315" y="387" text-anchor="middle" font-weight="600" fill="#0f172a">Risk scorer</text>
+    <text x="315" y="406" text-anchor="middle" fill="#64748b">5 signals → 0–1</text>
+
+    <line x1="380" y1="393" x2="408" y2="393" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <rect x="410" y="360" width="130" height="66" rx="8" fill="#ffffff" stroke="#94a3b8"/>
+    <text x="475" y="387" text-anchor="middle" font-weight="600" fill="#0f172a">Rule engine</text>
+    <text x="475" y="406" text-anchor="middle" fill="#64748b">3 match types</text>
+
+    <line x1="540" y1="393" x2="568" y2="393" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <rect x="570" y="360" width="96" height="66" rx="8" fill="#ffffff" stroke="#94a3b8"/>
+    <text x="618" y="387" text-anchor="middle" font-weight="600" fill="#0f172a">Routing</text>
+    <text x="618" y="406" text-anchor="middle" fill="#64748b">composite</text>
+  </g>
+
+  <!-- routing outcomes -->
+  <g font-size="11.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+    <line x1="666" y1="375" x2="700" y2="356" stroke="#64748b" stroke-width="1.2" marker-end="url(#arrow)"/>
+    <rect x="702" y="340" width="150" height="30" rx="15" fill="#fef2f2" stroke="#fca5a5"/>
+    <text x="777" y="359" text-anchor="middle" fill="#b91c1c">&#8805; 0.60  auto_rejected</text>
+
+    <line x1="666" y1="393" x2="700" y2="393" stroke="#64748b" stroke-width="1.2" marker-end="url(#arrow)"/>
+    <rect x="702" y="378" width="150" height="30" rx="15" fill="#fefce8" stroke="#fde047"/>
+    <text x="777" y="397" text-anchor="middle" fill="#854d0e">0.12–0.60  pending</text>
+
+    <line x1="666" y1="411" x2="700" y2="430" stroke="#64748b" stroke-width="1.2" marker-end="url(#arrow)"/>
+    <rect x="702" y="416" width="150" height="30" rx="15" fill="#f0fdf4" stroke="#86efac"/>
+    <text x="777" y="435" text-anchor="middle" fill="#166534">&#8804; 0.12  auto_approved</text>
+  </g>
+
+  <!-- human review queue -->
+  <g font-size="12">
+    <line x1="777" y1="408" x2="777" y2="448" stroke="#a16207" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+    <rect x="600" y="452" width="252" height="66" rx="8" fill="#fffbeb" stroke="#fcd34d"/>
+    <text x="726" y="478" text-anchor="middle" font-weight="600" fill="#92400e">Human review queue</text>
+    <text x="726" y="497" text-anchor="middle" fill="#a16207" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">risk × 0.7 + age × 0.3 · 60 s claim lock</text>
+  </g>
+
+  <!-- appeals note -->
+  <g font-size="12">
+    <rect x="70" y="452" width="470" height="66" rx="8" fill="#ffffff" stroke="#94a3b8"/>
+    <text x="305" y="478" text-anchor="middle" font-weight="600" fill="#0f172a">Appeals &amp; audit</text>
+    <text x="305" y="497" text-anchor="middle" fill="#64748b">overturn / uphold · every action logged with request ID</text>
+    <line x1="600" y1="485" x2="542" y2="485" stroke="#64748b" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- backend -> db -->
+  <line x1="450" y1="540" x2="450" y2="586" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ===================== DATABASE ===================== -->
+  <g>
+    <path d="M 280 606 a 170 16 0 0 0 340 0 v 52 a 170 16 0 0 1 -340 0 z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+    <ellipse cx="450" cy="606" rx="170" ry="16" fill="#eef2ff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="450" y="636" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">SQLite · WAL</text>
+    <text x="450" y="656" text-anchor="middle" font-size="11" fill="#64748b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">content_items · moderation_actions · rules · appeals</text>
+  </g>
+</svg>
